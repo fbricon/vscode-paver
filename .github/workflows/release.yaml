@@ -40,7 +40,6 @@ jobs:
       repo-cache-hit: ${{ steps.cache-last-commit.outputs.cache-hit }}
     steps:
       - uses: actions/checkout@v4
-        repository: redhat-developer/vscode-granite
       - run: |
           git rev-parse HEAD >> ./lastCommit
       - name: Check New Changes
@@ -57,7 +56,6 @@ jobs:
       - name: Checkout Extension
         uses: actions/checkout@v4
         with:
-          repository: redhat-developer/vscode-granite
           ref: ${{ inputs.EXTENSION_TAG }}
 
       - name: Set Up NodeJS
