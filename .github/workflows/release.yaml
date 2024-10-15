@@ -81,7 +81,7 @@ jobs:
 
       - name: Package extension
         run: |
-          vsce package ${{ env.publishPreReleaseFlag }}
+          npx @vscode/vsce package ${{ env.publishPreReleaseFlag }}
 
       - name: Publish to GH Release Tab
         if: ${{ github.event_name != 'schedule' && inputs.publishPreRelease == 'false' }}
