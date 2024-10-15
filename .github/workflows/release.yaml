@@ -123,5 +123,8 @@ jobs:
           node-version: '20'
       - name: Upversion for Development
         run: |
-          npx @vscode/vsce publish minor
+          tag=`npm version --no-git-tag-version patch`
+          git config --global user.email "vscode-granite-bot@users.noreply.github.com"
+          git config --global user.name "vscode-granite-bot"
+          git commit -am "Upversion to ${tag#v}"
           git push origin
