@@ -98,7 +98,7 @@ jobs:
         if: ${{ github.event_name == 'schedule' || inputs.publishToMarketPlace == 'true' || inputs.publishPreRelease == 'true' }}
         run: |
           echo "release to VS Code Marketplace"
-          ll -ls *.vsix
+          ls -ll *.vsix
         # run: |
         #   npx @vscode/vsce publish -p ${{ secrets.VSCODE_MARKETPLACE_TOKEN }} --packagePath vscode-granite-*.vsix
 
@@ -106,7 +106,7 @@ jobs:
         if: ${{ github.event_name == 'schedule' || inputs.publishToOVSX == 'true' || inputs.publishPreRelease == 'true' }}
         run: |
           echo "release to OVSX Marketplace"
-          ll -ls *.vsix
+          ls -ll *.vsix
         # run: |
         #   npx ovsx publish -p ${{ secrets.OVSX_MARKETPLACE_TOKEN }}  --packagePath vscode-granite-*.vsix
 
